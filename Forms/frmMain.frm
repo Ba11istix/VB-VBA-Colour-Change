@@ -865,8 +865,8 @@ Const VBA6 As Long = 727109     'VBA6.DLL, Normal style
 Const VBA6Rev As Long = 1596905 'VBA6.DLL, Reversed style
 Const VBE7 As Long = 2305245    'VBE7.DLL, Normal style
 Const VBE7Rev As Long = 2301309 'VBE7.DLL, Reversed style
-Const VBE6 As Long = 1          'VBE6.DLL, Normal style
-Const VBE6Rev As Long = 1       'VBE6.dll, Reversed style
+Const VBE6 As Long = 902573     'VBE6.DLL, Normal style
+Const VBE6Rev As Long = 1889505 'VBE6.dll, Reversed style
 
 Const ByteCount = 64
 
