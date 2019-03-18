@@ -1351,6 +1351,11 @@ Private Sub Form_Load()
             Paths(0) = "C:\Program Files (x86)\VB98\VB6.exe"
             Paths(1) = "C:\Program Files (x86)\VB98\VBA6.dll"
         End If
+    ElseIf Dir("C:\Program Files (x86)\Microsoft Visual Studio\VB98\VB6.exe") <> vbNullString Then
+        If Dir("C:\Program Files (x86)\Microsoft Visual Studio\VB98\VBA6.dll") <> vbNullString Then
+            Paths(0) = "C:\Program Files (x86)\Microsoft Visual Studio\VB98\VB6.exe"
+            Paths(1) = "C:\Program Files (x86)\Microsoft Visual Studio\VB98\VBA6.dll"
+        End If
     End If
     If Paths(0) <> vbNullString Then cmbType.AddItem "VB6"
     
