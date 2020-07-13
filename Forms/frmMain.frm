@@ -1457,7 +1457,7 @@ Private Sub bookmark_MouseUp(Button As Integer, Shift As Integer, x As Single, y
 Private Sub callreturn_MouseUp(Button As Integer, Shift As Integer, x As Single, y As Single):                   Current(Abs(Button - 3), 10) = CurrentColour: Update: End Sub
 
 Private Sub UpdateWheel()
-    Const scaler As Double = 1.8
+    Const scaler As Double = 1.5
     Dim cx As Single, cy As Single
     Dim x As Single, y As Single
     Dim dist As Single
@@ -1587,11 +1587,12 @@ Private Sub MoveColour(colour As Long)
                 MoveSelector x, y
                 For z = 0 To slider.ScaleHeight
                     RGBtoHSV GetPixel(slider.hdc, 8, z), wH, wS, wV
-                    If wV = V Then
+                    If wV >= V Then
                         MoveSlider z
                         Exit Sub
                     End If
                 Next z
+                Exit Sub
             End If
         Next x
     Next y
@@ -1619,7 +1620,7 @@ Private Sub RGBtoHSV(C As Long, ByRef H As Byte, ByRef S As Byte, ByRef V As Byt
     Dim Chroma As Byte
     Dim TempH As Single
     Dim R As Byte, G As Byte, B As Byte
-    
+
     R = C Mod 256
     G = (C \ 256) Mod 256
     B = (C \ 256 \ 256) Mod 256
