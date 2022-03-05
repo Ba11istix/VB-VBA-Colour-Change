@@ -2,21 +2,78 @@ VERSION 5.00
 Begin VB.Form frmMain 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Change Colour"
-   ClientHeight    =   6735
+   ClientHeight    =   7845
    ClientLeft      =   150
    ClientTop       =   480
    ClientWidth     =   4935
+   BeginProperty Font 
+      Name            =   "Arial"
+      Size            =   8.25
+      Charset         =   0
+      Weight          =   400
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6735
+   ScaleHeight     =   7845
    ScaleWidth      =   4935
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox textHex 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Left            =   2115
+      MaxLength       =   7
+      TabIndex        =   49
+      Top             =   6750
+      Width           =   780
+   End
+   Begin VB.TextBox textRGB 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Index           =   2
+      Left            =   585
+      MaxLength       =   3
+      TabIndex        =   44
+      Top             =   7500
+      Width           =   780
+   End
+   Begin VB.TextBox textRGB 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Index           =   1
+      Left            =   585
+      MaxLength       =   3
+      TabIndex        =   43
+      Top             =   7140
+      Width           =   780
+   End
+   Begin VB.TextBox textRGB 
+      Appearance      =   0  'Flat
+      Height          =   315
+      Index           =   0
+      Left            =   585
+      MaxLength       =   3
+      TabIndex        =   42
+      Top             =   6750
+      Width           =   780
+   End
    Begin VB.PictureBox slider 
       Appearance      =   0  'Flat
       AutoRedraw      =   -1  'True
       BackColor       =   &H00000000&
       FillStyle       =   0  'Solid
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   2895
       Left            =   3120
@@ -43,6 +100,15 @@ Begin VB.Form frmMain
       AutoRedraw      =   -1  'True
       BorderStyle     =   0  'None
       FillStyle       =   0  'Solid
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   2895
       Left            =   120
@@ -72,13 +138,13 @@ Begin VB.Form frmMain
       Width           =   1095
    End
    Begin VB.ComboBox cmbType 
-      Height          =   315
+      Height          =   330
       ItemData        =   "frmMain.frx":0000
       Left            =   3720
       List            =   "frmMain.frx":0002
       Style           =   2  'Dropdown List
       TabIndex        =   1
-      Top             =   120
+      Top             =   90
       Width           =   1095
    End
    Begin VB.CommandButton cmdWrite 
@@ -88,6 +154,46 @@ Begin VB.Form frmMain
       TabIndex        =   39
       Top             =   6000
       Width           =   1095
+   End
+   Begin VB.Label labelColor 
+      Alignment       =   1  'Right Justify
+      Caption         =   "Hex:"
+      Height          =   240
+      Index           =   3
+      Left            =   1575
+      TabIndex        =   48
+      Top             =   6810
+      Width           =   465
+   End
+   Begin VB.Label labelColor 
+      Alignment       =   1  'Right Justify
+      Caption         =   "B:"
+      Height          =   240
+      Index           =   2
+      Left            =   45
+      TabIndex        =   47
+      Top             =   7530
+      Width           =   465
+   End
+   Begin VB.Label labelColor 
+      Alignment       =   1  'Right Justify
+      Caption         =   "G:"
+      Height          =   240
+      Index           =   1
+      Left            =   45
+      TabIndex        =   46
+      Top             =   7170
+      Width           =   465
+   End
+   Begin VB.Label labelColor 
+      Alignment       =   1  'Right Justify
+      Caption         =   "R:"
+      Height          =   240
+      Index           =   0
+      Left            =   45
+      TabIndex        =   45
+      Top             =   6810
+      Width           =   465
    End
    Begin VB.Shape border 
       Height          =   495
@@ -212,6 +318,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00000000&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   0
@@ -278,6 +393,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   16
@@ -290,6 +414,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   15
@@ -302,6 +435,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   14
@@ -314,6 +456,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   13
@@ -326,6 +477,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   12
@@ -338,6 +498,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   11
@@ -350,6 +519,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   10
@@ -362,6 +540,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   9
@@ -726,6 +913,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   8
@@ -738,6 +934,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   7
@@ -750,6 +955,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   6
@@ -762,6 +976,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   5
@@ -774,6 +997,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   4
@@ -786,6 +1018,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   3
@@ -798,6 +1039,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   2
@@ -810,6 +1060,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   495
       Index           =   1
@@ -822,6 +1081,15 @@ Begin VB.Form frmMain
       Appearance      =   0  'Flat
       BackColor       =   &H00FFFFFF&
       BorderStyle     =   1  'Fixed Single
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H80000008&
       Height          =   3495
       Left            =   120
@@ -913,6 +1181,9 @@ Private Current(1 To 2, 1 To 10) As Integer '(1,x) = Back colour, (2,x) = Foreco
 Private Paths(0 To 3) As String '0=VB6, 1=VBA6, 2=VBE7, 3=VBE6
 
 Private CurrentColour As Integer
+Private RGBHasFocus   As Boolean
+Private HexHasFocus   As Boolean
+
 
 Function BrowseForFile(sInitDir As String, Optional ByVal sFileFilters As String, Optional sTitle As String = "Open File") As String
     Dim tFileBrowse As OpenFileName
@@ -1116,15 +1387,15 @@ Private Function ColourReversed() As String
                         & ColorToHex(colour(7).BackColor) & ColorToHex(colour(1).BackColor))
 End Function
 
-Private Function ColorToHex(ByVal Color As Long) As String 'returns 4 byte string with spaces
+Private Function ColorToHex(ByVal color As Long) As String 'returns 4 byte string with spaces
     Dim bytOut(11) As Byte
 
-    bytOut(0) = &H30& Or ((Color And &HF0&) \ &H10&)
-    bytOut(2) = &H30& Or (Color And &HF&)
-    bytOut(4) = &H30& Or ((Color And &HF000&) \ &H1000&)
-    bytOut(6) = &H30& Or ((Color And &HF00&) \ &H100&)
-    bytOut(8) = &H30& Or ((Color And &HF00000) \ &H100000)
-    bytOut(10) = &H30& Or ((Color And &HF0000) \ &H10000)
+    bytOut(0) = &H30& Or ((color And &HF0&) \ &H10&)
+    bytOut(2) = &H30& Or (color And &HF&)
+    bytOut(4) = &H30& Or ((color And &HF000&) \ &H1000&)
+    bytOut(6) = &H30& Or ((color And &HF00&) \ &H100&)
+    bytOut(8) = &H30& Or ((color And &HF00000) \ &H100000)
+    bytOut(10) = &H30& Or ((color And &HF0000) \ &H10000)
 
     If bytOut(0) > &H39 Then bytOut(0) = bytOut(0) + 7
     If bytOut(2) > &H39 Then bytOut(2) = bytOut(2) + 7
@@ -1330,6 +1601,9 @@ Private Sub colour_MouseUp(Index As Integer, Button As Integer, Shift As Integer
     MoveColour colour(Index).BackColor
 End Sub
 
+
+
+
 Private Sub Form_Load()
     If Dir("C:\Program Files\VB6\VB6.exe") <> vbNullString Then
         If Dir("C:\Program Files\VB6\VBA6.dll") <> vbNullString Then
@@ -1377,7 +1651,8 @@ Private Sub Form_Load()
     UpdateSlider
     MoveSelector wheel.ScaleWidth / 2, wheel.ScaleHeight / 2
     MoveSlider 1000
-    
+    RGBHasFocus = False
+    HexHasFocus = False
     cmdDefault_Click
     'colour_MouseUp 2, 1, 1, 1, 1
 End Sub
@@ -1549,7 +1824,10 @@ Private Sub UpdateSlider()
     
     slider.Refresh
     slide.FillColor = GetPixel(slider.hdc, 15, slide.top + slide.Height / 2)
-    colour(CurrentColour).BackColor = slide.FillColor
+    If Not RGBHasFocus And Not HexHasFocus Then
+        colour(CurrentColour).BackColor = slide.FillColor
+        UpdateRGBHex (slide.FillColor)
+    End If
 End Sub
 
 Private Sub MoveSlider(top As Single)
@@ -1560,8 +1838,21 @@ Private Sub MoveSlider(top As Single)
     End If
     slide.Move 8, top
     slide.FillColor = GetPixel(slider.hdc, 15, top + slide.Height / 2)
-    colour(CurrentColour).BackColor = slide.FillColor
+    
+    If Not RGBHasFocus And Not HexHasFocus Then
+        colour(CurrentColour).BackColor = slide.FillColor
+        UpdateRGBHex (slide.FillColor)
+    End If
 End Sub
+Private Sub UpdateRGBHex(color As Long)
+    Dim R As Long, G As Long, B As Long
+    
+    textHex.text = RGBToHex(color, R, G, B)
+    textRGB(0).text = R
+    textRGB(1).text = G
+    textRGB(2).text = B
+End Sub
+
 
 Private Function ArcTan2(x As Single, y As Single) As Single
     Select Case x
@@ -1611,6 +1902,51 @@ Private Sub slider_MouseMove(Button As Integer, Shift As Integer, x As Single, y
     If Button = 1 Then MoveSlider y
 End Sub
 
+Private Sub textHex_Change()
+    If HexHasFocus Then
+        Dim R As Long, G As Long, B As Long, color As Long
+        
+        color = HexToRbg(textHex.text, R, G, B)
+        colour(CurrentColour).BackColor = color
+        textRGB(0).text = R
+        textRGB(1).text = G
+        textRGB(2).text = B
+        MoveColour color
+    End If
+End Sub
+
+Private Sub textHex_GotFocus()
+    HexHasFocus = True
+End Sub
+
+Private Sub textHex_LostFocus()
+    HexHasFocus = False
+End Sub
+
+Private Sub textRGB_Change(Index As Integer)
+    If RGBHasFocus Then
+        Dim R As Long, G As Long, B As Long, color As Long
+        color = RGB("0" & textRGB(0).text, "0" & textRGB(1).text, "0" & textRGB(2).text)
+        colour(CurrentColour).BackColor = color
+        textHex.text = RGBToHex(color, R, G, B)
+        MoveColour color
+    End If
+End Sub
+
+Private Sub textRGB_GotFocus(Index As Integer)
+    RGBHasFocus = True
+End Sub
+
+Private Sub textRGB_KeyPress(Index As Integer, KeyAscii As Integer)
+    If (KeyAscii < Asc("0")) Or (KeyAscii > Asc("9")) Then
+        If KeyAscii <> vbKeyBack Then KeyAscii = 0
+    End If
+End Sub
+
+Private Sub textRGB_LostFocus(Index As Integer)
+    RGBHasFocus = False
+End Sub
+
 Private Sub wheel_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
     If Button = 1 Then MoveSelector x, y
 End Sub
@@ -1618,6 +1954,28 @@ End Sub
 Private Sub wheel_MouseMove(Button As Integer, Shift As Integer, x As Single, y As Single)
     If Button = 1 Then MoveSelector x, y
 End Sub
+
+Public Function HexToRbg(ByVal HexColor As String, ByRef R As Long, ByRef G As Long, ByRef B As Long) As Long
+    
+    HexColor = Replace(HexColor, "#", "")
+    R = Val("&H" & Mid(HexColor, 1, 2))
+    G = Val("&H" & Mid(HexColor, 3, 2))
+    B = Val("&H" & Mid(HexColor, 5, 2))
+    HexToRbg = RGB(R, G, B)
+End Function
+Public Function RGBToHex(ByVal color As Long, ByRef R As Long, ByRef G As Long, ByRef B As Long) As String
+    R = (color And &HFF)
+    G = ((color \ &H100) And &HFF)
+    B = ((color \ &H10000) And &HFF)
+
+    color = ((R * &H10000) + (G * &H100) + B)
+    If (R >= &H10) Then
+        RGBToHex = Hex$(color)
+    Else
+        RGBToHex = Right$("00000" & Hex$(color), 6)
+    End If
+    
+End Function
 
 Private Sub RGBtoHSV(C As Long, ByRef H As Byte, ByRef S As Byte, ByRef V As Byte)
     Dim MinVal As Byte
